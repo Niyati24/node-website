@@ -5,6 +5,9 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 var app=express();
+var portno = process.env.PORT ||3000;
+
+
 hbs.registerPartials(__dirname+'/views/partials')
 hbs.registerHelper('getCurrentDate',()=>{
     return new Date().getFullYear()
@@ -52,4 +55,6 @@ app.get('/bad',(req,res)=>{
     });
 });
 
-app.listen(3000);
+app.listen(portno,()=>{
+    console.log(`Listening to Port: ${portno}`);
+});
