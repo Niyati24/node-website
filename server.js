@@ -36,9 +36,17 @@ app.use((req,res,next)=>{
     console.log(logdata);
     next();
 })
+
 app.get('/', (req,res)=>{
     res.render('home.hbs',{
         pageTitle:'Home Page'
+       
+    }) ;
+});
+
+app.get('/project', (req,res)=>{
+    res.render('project.hbs',{
+        pageTitle:'Project Page'
        
     }) ;
 });
